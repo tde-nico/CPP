@@ -4,5 +4,6 @@ class PhoneBook
 {
 	public:
 		Contact	phonebook[8];
-		int	contacts;		
+		int	contacts;
+		int	max_contacts;
 };

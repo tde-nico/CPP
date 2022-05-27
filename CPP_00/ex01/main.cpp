@@ -41,6 +41,8 @@ int	add(PhoneBook *phonebook)
 	phonebook->phonebook[phonebook->contacts].set_secret(input);
 	std::cout << "Contatt Added to PhoneBook\n\n";
 	phonebook->contacts++;
+	if (phonebook->max_contacts < phonebook->contacts)
+		phonebook->max_contacts = phonebook->contacts;
 	return (0);
 }
 
@@ -55,7 +57,7 @@ void	search(PhoneBook *phonebook)
 {
 	std::string	input;
 
-	for (int i = 0; i < phonebook->contacts; i++)
+	for (int i = 0; i < phonebook->max_contacts; i++)
 	{
 		std::cout << "|" << std::setw(10) << i + 1;
 		std::cout << "|" << std::setw(10) << trunc_str(phonebook->phonebook[i].get_name());
@@ -79,6 +81,7 @@ int	main(void)
 	int			run = 1;
 
 	phonebook.contacts = 0;
+	phonebook.max_contacts = 0;
 	while (run)
 	{
 		std::cout << ">> ";
@@ -88,8 +91,8 @@ int	main(void)
 		else if (cmd == "ADD")
 		{
 			if (phonebook.contacts >= 8)
-				std::cout << "The PhoneBook is Full!!\n";
-			else if (add(&phonebook))
+				phonebook.contacts = 0;
+			if (add(&phonebook))
 				reset_last(&phonebook);
 		}
 		else if (cmd == "SEARCH")
