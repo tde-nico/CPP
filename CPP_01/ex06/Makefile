@@ -1,4 +1,4 @@
-NAME	=  Karen-filter
+NAME	=  KarenFilter
 CC	= clang++
 FLAGS	= -std=c++98 -Wall -Wextra -Werror
 RM	= rm -f
