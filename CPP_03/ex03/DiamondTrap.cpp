@@ -12,6 +12,11 @@ DiamondTrap::DiamondTrap(const std::string &name)
 
 DiamondTrap::DiamondTrap(void)
 {
+	ClapTrap::_name = "Default_clap_name";
+	this->_name = "Default";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "DiamondTrap Default was built\n";
 }
 

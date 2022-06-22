@@ -71,3 +71,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	std::cout << "ClapTrap " << _name << " repaired itself\n";
 }
+
+std::ostream	&operator<<(std::ostream & ostr, ClapTrap const & instance)
+{
+	ostr << "ClapTrap " << instance.getName();
+	return ostr;
+}
+
