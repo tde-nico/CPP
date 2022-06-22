@@ -18,14 +18,14 @@ Dog::~Dog(void)
 	delete this->brain;
 	std::cout << "Destructor Dog\n";
 }
-
+/*
 Dog	&Dog::operator=(Dog const &other)
 {
 	std::cout << "Assignement operator\n";
 	this->type = other.getType();
 	*(this->brain) = *(other.getBrain());
 	return *this;
-}
+}*/
 
 void	Dog::makeSound(void) const
 {

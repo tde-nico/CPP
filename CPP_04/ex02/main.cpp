@@ -25,9 +25,6 @@ int	main(void)
 	brain->ideas[3] = "Mum";
 	std::cout << animals[7]->getBrain()->ideas[0] << std::endl;
 
-	*(animals[5]) = *(animals[7]);
-	std::cout << animals[5]->getBrain()->ideas[2] << std::endl;
-
 	for (int i = 0; i < ANIMALS; i++)
 		delete animals[i];
 }
