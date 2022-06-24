@@ -91,6 +91,11 @@ int main()
 
 	std::cout << NONE << std::endl;
 
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+
 	std::cout << RED << "**** Destructor ****" << NONE << std::endl;
 	for (int i = 0; i < n; i++)
 		delete array[n];

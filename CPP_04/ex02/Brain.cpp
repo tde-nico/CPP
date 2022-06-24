@@ -5,10 +5,11 @@ Brain::Brain(void)
 	std::cout << "Default Brain\n";
 }
 
-Brain::Brain(Brain const & src)
+Brain::Brain(Brain const &src)
 {
 	std::cout << "Copy Brain\n";
-	*this = src;
+	for (int i = 0; i < Brain::numberOfIdeas; i++)
+		this->ideas[i] = src.ideas[i];
 }
 
 Brain::~Brain(void)
